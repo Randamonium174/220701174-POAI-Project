@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account - VisionaryStudio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000, #6a0dad); /* Black and Dark Violet gradient */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sign-in-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #f1c40f; /* Golden Yellow */
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .login-forms {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            background-color: #111;
+            color: #fff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent;
+            color: #f1c40f;
+            transition: background-color 0.3s ease;
+        }
+
+        .sign-in-button:hover {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 10px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent;
+            color: #f1c40f;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #f1c40f;
+            color: #000;
+            box-shadow: 0 0 10px #f1c40f;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px #000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: #f1c40f; /* Golden Yellow */
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #f1c40f;
+            color: #000;
+            box-shadow: 0 0 10px #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="sign-in-container" id="sign-in-container">
+        <div class="navbar">
+            <a href="visionarystudiohome.html">Home</a>
+            <a href="support.html">Support</a>
+        </div>
+
+        <h1>Create an Account on VisionaryStudio</h1>
+        <p>Fill in the details to create and customize your account</p>
+
+        <div class="login-forms">
+            <!-- Create Account Form -->
+            <div class="login-form" id="create-account-form">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+
+                <select required>
+                    <option value="" disabled selected>Select your primary use</option>
+                    <option value="personal">Personal Use</option>
+                    <option value="business">Business Use</option>
+                </select>
+
+                <select required>
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="technology">Technology</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="finance">Finance</option>
+                    <option value="education">Education</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <select required>
+                    <option value="" disabled selected>Select preferred features</option>
+                    <option value="analytics">Analytics</option>
+                    <option value="custom_reports">Custom Reports</option>
+                    <option value="user_management">User Management</option>
+                    <option value="automation">Automation</option>
+                    <option value="security">Enhanced Security</option>
+                    <option value="integration">Third-party Integration</option>
+                </select>
+
+                <button class="sign-in-button">Create Account</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

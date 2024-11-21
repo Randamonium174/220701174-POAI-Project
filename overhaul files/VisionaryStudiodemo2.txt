@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionaryStudio Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1b1b1b; /* Dark background color */
+            color: #f5f5f5;
+        }
+
+        header {
+            background: #000; /* Black background for header */
+            padding: 1em;
+            color: #f5f5f5;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00; /* Golden yellow border */
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ffcc00; /* Golden yellow title */
+        }
+
+        main {
+            padding: 2em;
+            background: #2c2c2c; /* Dark gray background for main content */
+            border-radius: 8px;
+            margin: 1em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        section {
+            margin-bottom: 2em;
+            padding: 1em;
+            background: #333; /* Darker background for sections */
+            border-radius: 8px;
+        }
+
+        section h2 {
+            color: #ffcc00; /* Golden yellow for headings */
+            margin-top: 0;
+        }
+
+        button {
+            background: #ffcc00; /* Golden yellow button */
+            border: none;
+            padding: 0.7em 1.5em;
+            color: #1b1b1b; /* Dark text color */
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin: 0.5em 0;
+        }
+
+        button:hover {
+            background: #e6b800; /* Slightly darker yellow on hover */
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.7em;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #1b1b1b;
+            color: #f5f5f5;
+            margin-bottom: 1em;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ffcc00;
+            outline: none;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        .box {
+            flex: 1 1 calc(50% - 1em); /* Adjusted to show two boxes side by side */
+            padding: 1em;
+            background: #333;
+            border: 1px solid #ffcc00;
+            border-radius: 5px;
+            color: #f5f5f5;
+            margin-bottom: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                flex: 1 1 calc(50% - 1em);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                flex: 1 1 100%;
+            }
+        }
+
+        footer {
+            background: #000;
+            padding: 1em;
+            text-align: center;
+            color: #f5f5f5;
+            border-top: 2px solid #ffcc00; /* Golden yellow border */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VisionaryStudio Demo</h1>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to VisionaryStudio! Discover how our AI-powered tools can elevate your marketing strategy.</p>
+            <button onclick="startInteractiveTour()">Start Interactive Tour</button>
+        </section>
+
+        <section id="input-section">
+            <h2>Input Your Details</h2>
+            <form id="brand-form">
+                <div id="input-fields">
+                    <div class="form-group">
+                        <label for="brand-name">Brand Name:</label>
+                        <input type="text" id="brand-name" name="brand-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="target-audience">Target Audience:</label>
+                        <input type="text" id="target-audience" name="target-audience" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goals">Goals:</label>
+                        <textarea id="goals" name="goals" required></textarea>
+                    </div>
+                </div>
+                <button type="button" onclick="addField()">Add More Fields</button>
+                <button type="submit">Generate</button>
+            </form>
+        </section>
+
+        <section id="blueprint">
+            <h2>Campaign Blueprint</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Blueprint Box 1</h3>
+                    <p>Details will appear here based on your inputs.</p>
+                </div>
+                <div class="box">
+                    <h3>Blueprint Box 2</h3>
+                    <p>Details will appear here based on your inputs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="content-creation">
+            <h2>Personalized Content Creation</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Social Media Post</h3>
+                    <p>Example content for social media...</p>
+                </div>
+                <div class="box">
+                    <h3>Blog Article</h3>
+                    <p>Example content for blog articles...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ideas">
+            <h2>Innovative Ideas</h2>
+            <button onclick="generateIdeas()">Generate Ideas</button>
+            <div id="idea-list" class="box-container">
+                <div class="box">
+                    <h3>Idea 1</h3>
+                    <p>Innovative idea description...</p>
+                </div>
+                <div class="box">
+                    <h3>Idea 2</h3>
+                    <p>Innovative idea description...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="analytics">
+            <h2>Analytics and Insights</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Analytics Box 1</h3>
+                    <p>Sample analytics data...</p>
+                </div>
+                <div class="box">
+                    <h3>Analytics Box 2</h3>
+                    <p>Sample analytics data...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="templates">
+            <h2>Customizable Templates</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Template 1</h3>
+                    <p>Example template...</p>
+                    <button>Customize</button>
+                </div>
+                <div class="box">
+                    <h3>Template 2</h3>
+                    <p>Example template...</p>
+                    <button>Customize</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizations">
+            <h2>Interactive Visualizations</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Visualization 1</h3>
+                    <p>Interactive chart or infographic...</p>
+                </div>
+                <div class="box">
+                    <h3>Visualization 2</h3>
+                    <p>Interactive chart or infographic...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitor-analysis">
+            <h2>Competitor Analysis</h2>
+            <button onclick="analyzeCompetitors()">Analyze Competitors</button>
+            <div id="competitor-results" class="box-container">
+                <div class="box">
+                    <h3>Competitor 1</h3>
+                    <p>Analysis results...</p>
+                </div>
+                <div class="box">
+                    <h3>Competitor 2</h3>
+                    <p>Analysis results...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="segmentation">
+            <h2>Audience Segmentation</h2>
+            <button onclick="segmentAudience()">Segment Audience</button>
+            <div id="segmentation-results" class="box-container">
+                <div class="box">
+                    <h3>Segment 1</h3>
+                    <p>Audience segmentation results...</p>
+                </div>
+                <div class="box">
+                    <h3>Segment 2</h3>
+                    <p>Audience segmentation results...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 VisionaryStudio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addField() {
+            const container = document.getElementById('input-fields');
+            const newField = document.createElement('div');
+            newField.className = 'form-group';
+            newField.innerHTML = `
+                <label for="additional-field">Additional Field:</label>
+                <input type="text" name="additional-field" required>
+                <button type="button" onclick="removeField(this)">Remove</button>
+            `;
+            container.appendChild(newField);
+        }
+
+        function removeField(button) {
+            const field = button.parentElement;
+            field.remove();
+        }
+
+        function startInteractiveTour() {
+            // Logic for starting an interactive tour
+        }
+
+        function generateIdeas() {
+            // Logic for generating innovative ideas
+        }
+
+        function analyzeCompetitors() {
+            // Logic for analyzing competitors
+        }
+
+        function segmentAudience() {
+            // Logic for audience segmentation
+        }
+    </script>
+</body>
+</html>

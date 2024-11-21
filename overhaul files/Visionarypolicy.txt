@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VisionaryStudio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000, #6a0dad); /* Black and Dark Violet gradient */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px #000;
+            border-radius: 10px;
+        }
+
+        .navbar a {
+            color: #f1c40f; /* Golden Yellow */
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #f1c40f;
+            color: #000;
+            box-shadow: 0 0 10px #f1c40f;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            color: #f1c40f; /* Golden Yellow */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #f1c40f; /* Golden Yellow */
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            color: #fff;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="support.html">Support</a>
+    </div>
+
+    <div class="container">
+        <h1>Privacy Policy</h1>
+
+        <p>Welcome to VisionaryStudio. We are committed to ensuring your privacy and protecting your personal information. 
+
+        This Privacy Policy describes how we collect, use, and safeguard your data when you use our digital marketing and content generation tools.</p>
+
+        <h2>Information We Collect</h2>
+        <p>To provide a seamless experience with VisionaryStudio, we collect the following types of information:</p>
+        <ul>
+            <li><strong>Account Information:</strong> When you create an account or use our tools, we collect personal details such as your name, email address, company information (if applicable), and other relevant data.</li>
+            <li><strong>Usage Data:</strong> We gather information about your interactions with our tools, including the features you use, the content you generate, and the duration of your sessions.</li>
+            <li><strong>Technical Data:</strong> This includes your IP address, browser type, operating system, and device information to ensure proper functionality and security.</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the collected information to:</p>
+        <ul>
+            <li><strong>Enhance User Experience:</strong> Improve the performance and features of our tools based on your usage patterns and feedback.</li>
+            <li><strong>Provide Support:</strong> Address any issues or queries you may have and offer assistance as needed.</li>
+            <li><strong>Communicate:</strong> Send updates, newsletters, or promotional materials relevant to your use of our services. You can opt-out of these communications at any time.</li>
+        </ul>
+
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not sell or rent your personal information. 
+
+        We may share data with third parties only under the following conditions:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> We may engage trusted partners to assist in operating our services, who will have access to your information solely for those purposes.</li>
+            <li><strong>Legal Obligations:</strong> We may disclose your information if required by law or to protect our rights, privacy, safety, or property, or that of others.</li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>We implement industry-standard security measures to protect your data. 
+
+        Despite our efforts, no method of electronic transmission or storage is 100% secure. 
+
+        We strive to protect your information but cannot guarantee absolute security.</p>
+
+        <h2>Your Rights and Choices</h2>
+        <p>You have the following rights regarding your personal data:</p>
+        <ul>
+            <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+            <li><strong>Correction:</strong> Request corrections to any inaccurate or incomplete data.</li>
+            <li><strong>Deletion:</strong> Request the deletion of your data under certain conditions.</li>
+            <li><strong>Restriction:</strong> Request to limit the processing of your data in specific situations.</li>
+        </ul>
+        <p>To exercise these rights, please contact us using the details below.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions or concerns about our Privacy Policy or data practices, please reach out to us:</p>
+        <p>Email: <a href="mailto:support@visionarystudio.com">support@visionarystudio.com</a></p>
+        <p>Address: VisionaryStudio, Dubai, UAE</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 VisionaryStudio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

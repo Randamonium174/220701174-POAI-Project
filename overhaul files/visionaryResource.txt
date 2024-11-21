@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionaryStudio Resources</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #000, #2e003e);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 2.5s forwards; /* Apply fade-in effect with 2.5 seconds duration */
+        }
+
+        .navbar {
+            background-color: #222;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-link {
+            color: #8a2be2;
+            border: 2px solid #8a2be2;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #8a2be2;
+            color: #fff;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+        }
+
+        .header h1 {
+            color: #ffd700;
+            margin: 0;
+        }
+
+        .header h2 {
+            color: #d3d3d3;
+            margin: 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .button {
+            background-color: #ffd700;
+            color: #000;
+            border: 2px solid #ffd700;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #f5c518;
+        }
+
+        .resource-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .resource-section {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+            display: none; /* Hide all sections by default */
+        }
+
+        .section-heading {
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 40px; /* Increased gap */
+        }
+
+        .resource-item {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #ffd700;
+        }
+
+        .resource-item:hover {
+            background-color: #333;
+        }
+
+        .resource-item h4 {
+            margin: 0 0 10px;
+            color: #8a2be2;
+        }
+
+        .resource-item a {
+            color: #ffd700;
+            text-decoration: none;
+            border: 2px solid #ffd700;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-item a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        .footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-top: 2px solid #ffd700;
+            margin-top: auto;
+        }
+
+        .description {
+            color: #d3d3d3;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Go Back</a>
+    </nav>
+
+    <header class="header">
+        <h1>VisionaryStudio Resources</h1>
+        <h2>Your go-to hub for tutorials, guides, and manuals</h2>
+    </header>
+
+    <div class="button-container">
+        <button class="button" onclick="setUserType('individual')">Individual</button>
+        <button class="button" onclick="setUserType('company')">Company</button>
+    </div>
+
+    <div class="description">
+        <p>Please specify whether you are an individual or a company to access relevant resources.</p>
+    </div>
+
+    <div class="resource-container">
+        <section class="resource-section" id="tutorials">
+            <h3 class="section-heading">Tutorials</h3>
+            <div class="resource-grid">
+                <!-- Tutorial items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="guides">
+            <h3 class="section-heading">Guides</h3>
+            <div class="resource-grid">
+                <!-- Guide items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="manuals">
+            <h3 class="section-heading">Manuals</h3>
+            <div class="resource-grid">
+                <!-- Manual items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="case-studies">
+            <h3 class="section-heading">Case Studies</h3>
+            <div class="resource-grid">
+                <!-- Case study items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="best-practices">
+            <h3 class="section-heading">Best Practices</h3>
+            <div class="resource-grid">
+                <!-- Best practices items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="marketing-types">
+            <h3 class="section-heading">Types of Marketing</h3>
+            <div class="resource-grid">
+                <!-- Marketing types items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="product-appeal">
+            <h3 class="section-heading">Making a Product Appealing</h3>
+            <div class="resource-grid">
+                <!-- Product appeal items will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section class="resource-section" id="digital-competitiveness">
+            <h3 class="section-heading">Staying Competitive in the Digital Market</h3>
+            <div class="resource-grid">
+                <!-- Digital competitiveness items will be dynamically populated here -->
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 VisionaryStudio</p>
+    </footer>
+
+    <script>
+        // Sample data for resources
+        const resources = {
+            individual: {
+                tutorials: [
+                    { title: 'Digital Marketing Basics', link: '#', description: 'Introduction to digital marketing principles.' },
+                    { title: 'Understanding SEO', link: '#', description: 'Basics of Search Engine Optimization.' }
+                ],
+                guides: [
+                    { title: 'The Digital Marketing Landscape', link: '#', description: 'Overview of the digital marketing world.' },
+                    { title: 'How to Build an Online Presence', link: '#', description: 'Steps to create and grow your online presence.' }
+                ]
+            },
+            company: {
+                manuals: [
+                    { title: 'Advanced Marketing Strategies', link: '#', description: 'Comprehensive guide to advanced marketing techniques.' },
+                    { title: 'Data-Driven Decision Making', link: '#', description: 'Using data to drive marketing decisions.' }
+                ],
+                caseStudies: [
+                    { title: 'Successful Implementation', link: '#', description: 'Case study on successful implementations.' },
+                    { title: 'Client Success Stories', link: '#', description: 'Stories from clients who have achieved success.' }
+                ],
+                bestPractices: [
+                    { title: 'Best Practices in Digital Marketing', link: '#', description: 'Top practices for effective digital marketing.' },
+                    { title: 'Optimizing Marketing Campaigns', link: '#', description: 'How to optimize and improve marketing campaigns.' }
+                ],
+                marketingTypes: [
+                    { title: 'Content Marketing', link: '#', description: 'Strategies for content marketing.' },
+                    { title: 'Social Media Marketing', link: '#', description: 'Using social media for marketing.' }
+                ],
+                productAppeal: [
+                    { title: 'Designing Attractive Products', link: '#', description: 'Tips for making products more appealing.' },
+                    { title: 'Understanding Consumer Psychology', link: '#', description: 'Insights into consumer behavior and preferences.' }
+                ],
+                digitalCompetitiveness: [
+                    { title: 'Keeping Up with Trends', link: '#', description: 'Staying ahead in the digital market.' },
+                    { title: 'Leveraging Technology', link: '#', description: 'Using technology to maintain a competitive edge.' }
+                ]
+            }
+        };
+
+        function setUserType(userType) {
+            const sections = document.querySelectorAll('.resource-section');
+            sections.forEach(section => section.style.display = 'none');
+
+            if (userType === 'individual') {
+                document.getElementById('tutorials').style.display = 'block';
+                document.getElementById('guides').style.display = 'block';
+                populateResources('tutorials', resources.individual.tutorials);
+                populateResources('guides', resources.individual.guides);
+            } else if (userType === 'company') {
+                document.getElementById('manuals').style.display = 'block';
+                document.getElementById('case-studies').style.display = 'block';
+                document.getElementById('best-practices').style.display = 'block';
+                document.getElementById('marketing-types').style.display = 'block';
+                document.getElementById('product-appeal').style.display = 'block';
+                document.getElementById('digital-competitiveness').style.display = 'block';
+                populateResources('manuals', resources.company.manuals);
+                populateResources('case-studies', resources.company.caseStudies);
+                populateResources('best-practices', resources.company.bestPractices);
+                populateResources('marketing-types', resources.company.marketingTypes);
+                populateResources('product-appeal', resources.company.productAppeal);
+                populateResources('digital-competitiveness', resources.company.digitalCompetitiveness);
+            }
+        }
+
+        function populateResources(sectionId, items) {
+            const container = document.querySelector(`#${sectionId} .resource-grid`);
+            container.innerHTML = '';
+            items.forEach(item => {
+                const resourceItem = document.createElement('div');
+                resourceItem.classList.add('resource-item');
+                resourceItem.innerHTML = `
+                    <h4>${item.title}</h4>
+                    <p>${item.description}</p>
+                    <a href="${item.link}">Learn More</a>
+                `;
+                container.appendChild(resourceItem);
+            });
+        }
+    </script>
+</body>
+</html>

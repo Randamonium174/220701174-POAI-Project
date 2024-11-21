@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - VisionaryStudio</title>
+    <style>
+        body {
+            background: radial-gradient(circle at top left, #2c0033, #000000);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+            box-shadow: 0 0 15px 5px #FFD700;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 0.5s forwards;
+        }
+
+        .navbar a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, color 0.3s ease;
+            border: 2px solid #FFD700;
+        }
+
+        .navbar a:hover {
+            background-color: #FFD700;
+            color: #000;
+            box-shadow: 0 0 10px #FFD700;
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            flex: 1;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+
+        .content-section h1 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .content-section h2, .content-section h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #8A2BE2;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 0 10px #8A2BE2;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 0 20px #8A2BE2, 0 0 30px #8A2BE2, 0 0 40px #8A2BE2;
+        }
+
+        .footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px 5px #FFD700;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1.5s forwards;
+        }
+
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            padding: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #FFD700;
+            color: #000;
+            box-shadow: 0 0 10px #FFD700;
+        }
+
+        .nav-button {
+            border: 2px solid #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">VisionaryStudio</div>
+        <a href="index.html" class="nav-button">Home</a>
+    </nav>
+
+    <section class="content-section">
+        <h1>About Us</h1>
+        <h2>About VisionaryStudio</h2>
+        <p>
+            VisionaryStudio is a pioneering platform designed to revolutionize digital marketing and e-commerce through AI-driven solutions. Our mission is to empower businesses with innovative tools that streamline the idea generation process and ensure the delivery of high-quality final products.
+        </p>
+        <p>
+            With VisionaryStudio, you can expect enhanced creativity, seamless customization, and impactful results tailored to your brand's unique needs. Join us in transforming your marketing strategies and achieving unprecedented success. Experience the future of content creation with VisionaryStudio.
+        </p>
+        
+        <h3>Key Features:</h3>
+        <p>
+            <strong>AI-Powered Idea Generation:</strong> Harness advanced AI technology to generate innovative ideas quickly.<br>
+            <strong>Customizable Content Solutions:</strong> Tailor content to meet your specific business needs.<br>
+            <strong>High-Quality Final Product Delivery:</strong> Ensure top-notch results with every project.<br>
+            <strong>Comprehensive Analytics and Insights:</strong> Gain valuable insights to refine your strategies.<br>
+            <strong>Seamless Integration with Existing Tools:</strong> Easily integrate with your current systems for efficiency.
+        </p>
+
+        <h3>Meet the Team</h3>
+        <p>
+            <strong>Mr. Randamonium:</strong> The founder of VisionaryStudio, Mr. Randamonium, is a visionary in the field of AI and digital marketing. With years of experience and a passion for innovation, he has dedicated his career to developing cutting-edge solutions that empower businesses to reach new heights. His expertise and forward-thinking approach have been instrumental in shaping VisionaryStudio into the groundbreaking platform it is today.
+        </p>
+        <p>
+            <strong>Mohith:</strong> A seasoned software engineer with a knack for developing robust AI algorithms. Mohith's expertise in machine learning and data analysis is pivotal to our innovative solutions.
+        </p>
+        <p>
+            <strong>Logeshwaran:</strong> An expert in digital marketing strategies and content creation. Logeshwaran's insights and creative approach help us deliver exceptional marketing solutions to our clients.
+        </p>
+
+        <h3>Headquarters</h3>
+        <p>
+            VisionaryStudio's headquarters is located in Dubai, a central business hub that fosters innovation and growth. Our company is verified and operates under the regulations and standards set by the UAE, ensuring the highest levels of compliance and trust.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 VisionaryStudio. All rights reserved.</p>
+        <div>
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - VisionaryStudio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000, #6a0dad); /* Black and Dark Violet gradient */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sign-in-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #f1c40f; /* Golden Yellow */
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .login-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: transparent;
+            color: #f1c40f;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-button.active {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        .login-forms {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            background-color: #111;
+            color: #fff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent;
+            color: #f1c40f;
+            transition: background-color 0.3s ease;
+        }
+
+        .sign-in-button:hover {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 10px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent;
+            color: #f1c40f;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #f1c40f;
+            color: #000;
+            box-shadow: 0 0 10px #f1c40f;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px #000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: #f1c40f; /* Golden Yellow */
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #f1c40f;
+            color: #000;
+            box-shadow: 0 0 10px #f1c40f;
+        }
+
+        .forgot-password {
+            margin-top: 15px;
+            display: block;
+            color: #f1c40f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="sign-in-container" id="sign-in-container">
+        <div class="navbar">
+            <a href="visionarystudiohome.html">Home</a>
+            <a href="support.html">Support</a>
+        </div>
+
+        <h1>Sign In to VisionaryStudio</h1>
+        <p>Choose your login type</p>
+
+        <div class="login-toggle">
+            <button id="personal-tab" class="toggle-button active">Personal Login</button>
+            <button id="company-tab" class="toggle-button">Company Login</button>
+        </div>
+
+        <div class="login-forms">
+            <!-- Personal Login Form -->
+            <div class="login-form" id="personal-login-form">
+                <h2>Personal Login</h2>
+                <input type="text" placeholder="Username/Email">
+                <input type="password" placeholder="Password">
+                <button class="sign-in-button">Sign In</button>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('personal-tab').addEventListener('click', function() {
+            swapForm('personal');
+            this.classList.add('active');
+            document.getElementById('company-tab').classList.remove('active');
+        });
+
+        document.getElementById('company-tab').addEventListener('click', function() {
+            swapForm('company');
+            this.classList.add('active');
+            document.getElementById('personal-tab').classList.remove('active');
+        });
+
+        function swapForm(type) {
+            const container = document.getElementById('sign-in-container');
+            container.classList.add('fade-out');
+
+            setTimeout(() => {
+                if (type === 'personal') {
+                    container.innerHTML = `
+                        <div class="navbar">
+                            <a href="visionarystudiohome.html">Home</a>
+                            <a href="support.html">Support</a>
+                        </div>
+                        <h1>Sign In to VisionaryStudio</h1>
+                        <p>Choose your login type</p>
+                        <div class="login-toggle">
+                            <button id="personal-tab" class="toggle-button active">Personal Login</button>
+                            <button id="company-tab" class="toggle-button">Company Login</button>
+                        </div>
+                        <div class="login-forms">
+                            <div class="login-form" id="personal-login-form">
+                                <h2>Personal Login</h2>
+                                <input type="text" placeholder="Username/Email">
+                                <input type="password" placeholder="Password">
+                                <button class="sign-in-button">Sign In</button>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <div class="navbar">
+                            <a href="visionarystudiohome.html">Home</a>
+                            <a href="support.html">Support</a>
+                        </div>
+                        <h1>Sign In to VisionaryStudio</h1>
+                        <p>Choose your login type</p>
+                        <div class="login-toggle">
+                            <button id="personal-tab" class="toggle-button">Personal Login</button>
+                            <button id="company-tab" class="toggle-button active">Company Login</button>
+                        </div>
+                        <div class="login-forms">
+                            <div class="login-form" id="company-login-form">
+                                <h2>Company Client Login</h2>
+                                <input type="text" placeholder="Company ID">
+                                <input type="password" placeholder="Password">
+                                <button class="sign-in-button">Sign In</button>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                document.getElementById('personal-tab').addEventListener('click', function() {
+                    swapForm('personal');
+                    this.classList.add('active');
+                    document.getElementById('company-tab').classList.remove('active');
+                });
+
+                document.getElementById('company-tab').addEventListener('click', function() {
+                    swapForm('company');
+                    this.classList.add('active');
+                    document.getElementById('personal-tab').classList.remove('active');
+                });
+
+                container.classList.remove('fade-out');
+            }, 500);
+        }
+    </script>
+</body>
+</html>

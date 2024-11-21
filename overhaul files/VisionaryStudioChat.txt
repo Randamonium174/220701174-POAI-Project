@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionaryStudio Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #000000, #4a004a);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #chat-container {
+      width: 85%;
+      max-width: 900px;
+      height: 80vh;
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #chat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+    }
+
+    #chat-header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #FFD700;
+    }
+
+    #chat-header button, #send {
+      background-color: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    #chat-header button:hover, #send:hover {
+      background-color: #FFD700;
+      color: #111;
+      box-shadow: 0 0 10px #FFD700;
+    }
+
+    #chat-header button:active, #send:active {
+      background-color: #e5c100;
+      color: #111;
+      box-shadow: 0 0 15px #FFD700;
+    }
+
+    #chat-description {
+      padding: 15px;
+      background-color: #222;
+      border-top: 1px solid #333;
+      font-size: 16px;
+      color: #bbb;
+    }
+
+    #chat-window {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background-color: #1e1e1e;
+      color: #fff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+      position: relative;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #333;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .message.user .avatar {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+
+    .message .text {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 10px;
+      max-width: 70%;
+      position: relative;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .message.user .text {
+      background-color: #4a004a;
+    }
+
+    .message .text:hover {
+      background-color: #555;
+    }
+
+    .message.user .text:hover {
+      background-color: #5a005a;
+    }
+
+    #message-container {
+      display: flex;
+      border-top: 1px solid #333;
+      background-color: #222;
+      padding: 10px;
+    }
+
+    #message {
+      flex-grow: 1;
+      padding: 15px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px 0 0 5px;
+      font-size: 16px;
+    }
+
+    input::placeholder {
+      color: #888;
+    }
+
+    /* Bubble Animation */
+    .bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(138, 43, 226, 0.5);
+      opacity: 0.5;
+      animation: bubbleAnimation 10s infinite;
+    }
+
+    @keyframes bubbleAnimation {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(50vh) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Bubbles with different sizes and animation durations */
+    .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 12s; }
+    .bubble:nth-child(2) { width: 60px; height: 60px; left: 30%; animation-duration: 10s; }
+    .bubble:nth-child(3) { width: 50px; height: 50px; left: 50%; animation-duration: 14s; }
+    .bubble:nth-child(4) { width: 70px; height: 70px; left: 70%; animation-duration: 11s; }
+    .bubble:nth-child(5) { width: 30px; height: 30px; left: 90%; animation-duration: 13s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #typing-indicator {
+      display: none;
+      font-style: italic;
+      color: #888;
+    }
+
+    /* Message bubble bouncing effect */
+    .message.bounce {
+      animation: bounce 0.5s;
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(0.95); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div id="chat-container">
+    <div id="chat-header">
+      <h1>VisionaryStudio Chat</h1>
+      <div>
+        <button id="go-back">Go Back</button>
+        <button id="home">Home</button>
+      </div>
+    </div>
+    <div id="chat-description">
+      <p>Connect with our support team and get the help you need. Type your message below to start chatting.</p>
+    </div>
+    <div id="chat-window">
+      <div id="output">
+        <!-- Messages will be dynamically inserted here -->
+      </div>
+      <div id="typing-indicator">A user is typing...</div>
+    </div>
+    <div id="message-container">
+      <input id="message" type="text" placeholder="Type your message..." />
+      <button id="send">Send</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const messages = document.getElementById('output');
+      const messageInput = document.getElementById('message');
+      const sendButton = document.getElementById('send');
+      const typingIndicator = document.getElementById('typing-indicator');
+
+      // Example message display
+      function displayMessage(text, user) {
+        const message = document.createElement('div');
+        message.className = `message ${user ? 'user' : ''}`;
+        message.innerHTML = `
+          <div class="avatar"></div>
+          <div class="text">${text}</div>
+        `;
+        messages.appendChild(message);
+        message.classList.add('bounce');
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      // Example message
+      displayMessage('Hello, how can I help you today?');
+
+      // Send button click event
+      sendButton.addEventListener('click', () => {
+        const messageText = messageInput.value;
+        if (messageText) {
+          displayMessage(messageText, true); // Simulating a user message
+          messageInput.value = '';
+          typingIndicator.style.display = 'block'; // Show typing indicator
+          setTimeout(() => {
+            typingIndicator.style.display = 'none'; // Hide typing indicator after delay
+          }, 2000);
+        }
+      });
+
+      // Go Back button
+      document.getElementById('go-back').addEventListener('click', () => {
+        // Implement go back functionality
+        alert('Going back...');
+      });
+
+      // Home button
+      document.getElementById('home').addEventListener('click', () => {
+        // Implement home functionality
+        alert('Returning to home...');
+      });
+    });
+  </script>
+</body>
+</html>
